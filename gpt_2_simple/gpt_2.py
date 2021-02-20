@@ -65,17 +65,14 @@ def download_file_with_progress(url_base, sub_dir, model_name, file_name):
 def download_gpt2(model_dir='models', model_name='124M'):
     """Downloads the GPT-2 model into the current directory
     from Google Cloud Storage.
-
     Parameters
     ----------
     model_dir : str
         parent directory of model to download
-
     model_name : str
         name of the GPT-2 model to download. 
         As of 22 May 2019 one of "124M" or "355M" but may later include other 
         model sizes
-
     Adapted from https://github.com/openai/gpt-2/blob/master/download_model.py
     """
 
@@ -88,7 +85,7 @@ def download_gpt2(model_dir='models', model_name='124M'):
     for file_name in ['checkpoint', 'encoder.json', 'hparams.json',
                       'model.ckpt.data-00000-of-00001', 'model.ckpt.index',
                       'model.ckpt.meta', 'vocab.bpe']:
-        download_file_with_progress(url_base="https://storage.googleapis.com/gpt-2",
+        download_file_with_progress(url_base="https://openaipublic.blob.core.windows.net/gpt-2",
                                     sub_dir=sub_dir,
                                     model_name=model_name,
                                     file_name=file_name)
